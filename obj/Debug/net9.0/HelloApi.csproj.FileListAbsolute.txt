@@ -25,3 +25,9 @@ C:\Users\Pichau\Documents\HelloApi\obj\Debug\net9.0\refint\HelloApi.dll
 C:\Users\Pichau\Documents\HelloApi\obj\Debug\net9.0\HelloApi.pdb
 C:\Users\Pichau\Documents\HelloApi\obj\Debug\net9.0\HelloApi.genruntimeconfig.cache
 C:\Users\Pichau\Documents\HelloApi\obj\Debug\net9.0\ref\HelloApi.dll
+C:\Users\Pichau\Documents\HelloApi\obj\Debug\net9.0\HelloApi.sourcelink.json
+C:\Users\Pichau\Documents\HelloApi\bin\Debug\net9.0\HelloApi.staticwebassets.runtime.json
+C:\Users\Pichau\Documents\HelloApi\obj\Debug\net9.0\compressed\yfddjddmwq-b9j7j7mnjn.gz
+C:\Users\Pichau\Documents\HelloApi\obj\Debug\net9.0\compressed\rq596u1tux-wynwuas3j9.gz
+C:\Users\Pichau\Documents\HelloApi\obj\Debug\net9.0\compressed\54qfdc0jfl-mvmwf8ccw2.gz
+C:\Users\Pichau\Documents\HelloApi\obj\Debug\net9.0\compressed\ta6kxodf4x-guryvwf4ec.gz

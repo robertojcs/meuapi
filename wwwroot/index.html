@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Produtos</title>
+    <!-- =============================== -->
+    <!-- Estilos da página -->
+    <!-- =============================== -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Produtos</h1>
+    <a href="cadastro.html"><button style="margin-bottom:20px; padding:8px;">Ir para Cadastro</button></a>
+    <!-- =============================== -->
+    <!-- Filtros e botões de ordenação -->
+    <!-- =============================== -->
+    <input type="text" id="filtro" placeholder="Filtrar por nome...">
+    <button id="ordenar-nome">Ordenar por Nome</button>
+    <button id="ordenar-preco">Ordenar por Preço</button>
+
+    <!-- =============================== -->
+    <!-- Tabela de produtos -->
+    <!-- =============================== -->
+    <table id="produtos-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Produtos serão inseridos aqui -->
+        </tbody>
+    </table>
+    <script src="index.js"></script>
+</body>
+</html>
