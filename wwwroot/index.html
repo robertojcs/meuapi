@@ -2,37 +2,20 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Produtos</title>
-    <!-- =============================== -->
-    <!-- Estilos da página -->
-    <!-- =============================== -->
-    <link rel="stylesheet" href="index.css">
+    <title>Página Principal</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        button { padding: 10px 16px; margin: 6px; }
+    </style>
 </head>
 <body>
-    <h1>Produtos</h1>
-    <a href="cadastro.html"><button style="margin-bottom:20px; padding:8px;">Ir para Cadastro</button></a>
-    <!-- =============================== -->
-    <!-- Filtros e botões de ordenação -->
-    <!-- =============================== -->
-    <input type="text" id="filtro" placeholder="Filtrar por nome...">
-    <button id="ordenar-nome">Ordenar por Nome</button>
-    <button id="ordenar-preco">Ordenar por Preço</button>
-
-    <!-- =============================== -->
-    <!-- Tabela de produtos -->
-    <!-- =============================== -->
-    <table id="produtos-table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Preço</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Produtos serão inseridos aqui -->
-        </tbody>
-    </table>
-    <script src="index.js"></script>
+    <h1>API - Página Principal</h1>
+    <p>Use os botões abaixo para navegar entre as páginas e endpoints:</p>
+    <div>
+        <a href="/produtos/html"><button>Ver Produtos (HTML)</button></a>
+        <a href="/produtos"><button>Abrir /produtos (JSON)</button></a>
+        <a href="/cadastro.html"><button>Ir para Cadastro (HTML)</button></a>
+    </div>
+    <p style="margin-top:20px;font-size:0.9em;color:#555">(A raiz da API em <code>/</code> continuará respondendo "Hello World!")</p>
 </body>
 </html>

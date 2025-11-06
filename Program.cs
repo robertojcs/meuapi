@@ -37,7 +37,7 @@ var produtos = new List<Produto>
 // Endpoints da API
 // ===============================
 
-// Endpoint raiz (mensagem de teste)
+// Endpoint raiz da API: mensagem simples (Hello World)
 app.MapGet("/", () => "Hello World!");
 
 
@@ -52,6 +52,12 @@ app.MapPost("/produtos", (Produto novoProduto) =>
 	produtos.Add(novoProduto);
 	return Results.Created($"/produtos/{novoProduto.Id}", novoProduto);
 });
+
+// Endpoint HTML para visualizar a lista de produtos: redireciona para arquivo estático
+app.MapGet("/produtos/html", () => Results.Redirect("/produtos.html"));
+
+// Endpoint HTML para visualizar um produto (detalhe): redireciona para arquivo estático com query string
+app.MapGet("/produtos/{id}/html", (int id) => Results.Redirect($"/produto.html?id={id}"));
 
 // Endpoint para retornar um produto por Id
 app.MapGet("/produtos/{id}", (int id) =>

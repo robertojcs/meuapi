@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Produto</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:24px}
+    button{padding:8px 12px}
+  </style>
+</head>
+<body>
+  <div id="conteudo">Carregando...</div>
+  <script>
+    // Lê o id da querystring e busca o produto na API
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const conteudo = document.getElementById('conteudo');
+    if (!id) {
+      conteudo.innerHTML = '<p>ID de produto não informado.</p><a href="/produtos.html"><button>Voltar</button></a>';
+    } else {
+      fetch('/produtos/' + encodeURIComponent(id))
+        .then(r => {
+          if (!r.ok) throw new Error('Não encontrado');
+          return r.json();
+        })
+        .then(p => {
+          conteudo.innerHTML = `
+            <h1>Produto — ${p.nome}</h1>
+            <p><strong>ID:</strong> ${p.id}</p>
+            <p><strong>Nome:</strong> ${p.nome}</p>
+            <p><strong>Preço:</strong> R$ ${p.preco.toFixed(2)}</p>
+            <a href="/produtos.html"><button>Voltar para Produtos</button></a>
+            <a href="/index.html" style="margin-left:8px"><button>Voltar para Página Principal</button></a>
+          `;
+        })
+        .catch(() => {
+          conteudo.innerHTML = `<p>Produto ${id} não encontrado.</p><a href="/produtos.html"><button>Voltar</button></a>`;
+        });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Produtos</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:24px}
+    table{border-collapse:collapse;width:100%}
+    th,td{border:1px solid #ccc;padding:8px;text-align:left}
+    th{background:#f4f4f4}
+    button{padding:8px 12px}
+  </style>
+</head>
+<body>
+  <h1>Produtos</h1>
+  <a href="/index.html"><button>Voltar para Página Principal</button></a>
+  <div id="lista" style="margin-top:16px">Carregando produtos...</div>
+
+  <script>
+    // Busca a lista de produtos da API e renderiza uma tabela
+    fetch('/produtos')
+      .then(r => r.json())
+      .then(lista => {
+        if (!Array.isArray(lista)) {
+          document.getElementById('lista').innerText = 'Resposta inválida';
+          return;
+        }
+        let html = '<table><thead><tr><th>ID</th><th>Nome</th><th>Preço</th><th>Ações</th></tr></thead><tbody>';
+        lista.forEach(p => {
+          html += `<tr><td>${p.id}</td><td>${p.nome}</td><td>R$ ${p.preco.toFixed(2)}</td><td><a href="/produto.html?id=${p.id}"><button>Ver</button></a></td></tr>`;
+        });
+        html += '</tbody></table>';
+        document.getElementById('lista').innerHTML = html;
+      })
+      .catch(err => {
+        document.getElementById('lista').innerText = 'Erro ao carregar produtos.';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
